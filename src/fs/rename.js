@@ -11,7 +11,7 @@ export const rename = async () => {
   const newPath = resolve(__dirname, "files", "properFilename.md");
 
   try {
-    console.info(`\x1b[33mRename:\x1b[0m\t   ${oldPath}\n\t\tto ${newPath}`);
+    console.log(`\x1b[33mRename:\x1b[0m\t   ${oldPath}\n\t\tto ${newPath}`);
     await stat(newPath);
     throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m")
   }
@@ -24,7 +24,7 @@ export const rename = async () => {
         else {
           throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m");
         }
-        console.info("\x1b[32m\x1b[7m Completed \x1b[0m");
+        console.log("\x1b[32m\x1b[7m Completed \x1b[0m");
       } catch (error) {
         if (error.code === "ENOENT") {
           throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m");

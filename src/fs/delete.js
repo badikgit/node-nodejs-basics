@@ -10,7 +10,7 @@ export const remove = async () => {
   const fileName = resolve(__dirname, "files", "fileToRemove.txt");
 
   try {
-    console.info(`\x1b[33mDeleting file: \x1b[0m${fileName}`);
+    console.log(`\x1b[33mDeleting file: \x1b[0m${fileName}`);
     if ((await stat(fileName)).isFile()) {
       await rm(fileName);
       console.log("\x1b[32m\x1b[7m Completed \x1b[0m");

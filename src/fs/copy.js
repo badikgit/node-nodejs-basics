@@ -11,7 +11,7 @@ export const copy = async () => {
   const destDirPath = resolve(__dirname,'files_copy');
 
   try {
-    console.info(`\x1b[33mСopy files:\x1b[0m\tfrom ${srcDirPath}\n\t\t  to ${destDirPath}`);
+    console.log(`\x1b[33mСopy files:\x1b[0m\tfrom ${srcDirPath}\n\t\t  to ${destDirPath}`);
     await cp(srcDirPath, destDirPath, { errorOnExist: true, force: false, recursive: true } );
     console.log("\x1b[32m\x1b[7m Completed \x1b[0m");
   }

@@ -11,7 +11,7 @@ export const create = async () => {
   const textData = 'I am fresh and young';
 
   try {
-    console.info(`\x1b[33mCreating file: \x1b[0m${fileName}`);
+    console.log(`\x1b[33mCreating file: \x1b[0m${fileName}`);
     await writeFile(fileName, textData, { flag: "wx" });
     console.log("\x1b[32m\x1b[7m Completed \x1b[0m");
   }

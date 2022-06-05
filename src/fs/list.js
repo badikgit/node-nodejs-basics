@@ -10,7 +10,7 @@ export const list = async () => {
   const dirPath = resolve(__dirname, "files");
 
   try {
-    console.info(`\x1b[33mCreating array of filenames: \x1b[0m${dirPath}`);
+    console.log(`\x1b[33mCreating array of filenames: \x1b[0m${dirPath}`);
     if ((await stat(dirPath)).isDirectory()) {
       const files = await readdir(dirPath, { withFileTypes: true });
       console.table(files.filter(file => file.isFile()).map(file => file.name));

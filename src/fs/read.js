@@ -9,7 +9,7 @@ export const read = async () => {
 
   const filePath = resolve(__dirname, "files","fileToRead.txt");
   try {
-    console.info(`\x1b[33mReading file: \x1b[0m${filePath}`);
+    console.log(`\x1b[33mReading file: \x1b[0m${filePath}`);
     const data = await readFile(filePath, { encoding : "utf-8" });
     console.log(data);
     console.log("\x1b[32m\x1b[7m Completed \x1b[0m");
