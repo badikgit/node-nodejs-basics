@@ -18,12 +18,10 @@ export const copy = async () => {
   catch (error) {
     if (error) {
       if (error.code === "ERR_FS_CP_EEXIST" || error.code === "ENOENT") {
-        throw (new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m"));
-        //throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m");
+        throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m");
       }
       else {
-        throw (error);
-        //throw error;
+        throw error;
       }
     } 
   }

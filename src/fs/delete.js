@@ -16,17 +16,15 @@ export const remove = async () => {
       console.log("\x1b[32m\x1b[7m Completed \x1b[0m");
     }
     else {
-      throw (new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m"));
+      throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m");
     }
   }
   catch (error) {
     if (error.code === "ENOENT") {
-      throw (new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m"));
-      //throw new Error("\x1b[41m\x1b[37m FS operation failed \x1b[0m");
+      throw new Error("\x1b[41m\x1b[37m FS operation failed. \x1b[0m");
     }
     else {
-      throw (error);
-      //throw error;
+      throw error;
     }
   }
 };
