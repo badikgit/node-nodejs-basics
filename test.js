@@ -10,7 +10,7 @@ import { parseEnv } from './src/cli/env.js';
 import { parseArgs } from './src/cli/args.js';
 import { fork } from "child_process";
 /* Modules(src/modules) */
-//import './src/modules/cjsToEsm.cjs';
+
 /* Hash (src/hash) */
 import { calculateHash } from './src/hash/calcHash.js';
 /* Streams (src/streams) */
@@ -53,23 +53,12 @@ import cluster from 'cluster';
       console.log(error);
     }
     try {
-      //await list();
+      await list();
     } catch (error) {
       console.log(error);
     }
     try {
-      //await read();
-    } catch (error) {
-      console.log(error);
-    }
-    console.groupEnd();
-  }
-
-  /* Modules(src/modules) */
-  {
-    console.group('\n\x1b[46m\x1b[30m Modules(src/modules): \x1b[0m')
-    try {
-      //await parseEnv();
+      await read();
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +69,7 @@ import cluster from 'cluster';
   {
     console.group('\n\x1b[46m\x1b[30m Hash (src/hash): \x1b[0m')
     try {
-      //await calculateHash();
+      await calculateHash();
     } catch (error) {
       console.log(error);
     }
@@ -153,6 +142,17 @@ import cluster from 'cluster';
 
   console.groupEnd();
   console.log('\n\x1b[7m\x1b[32m Tests over \x1b[0m');
+}
+
+/* Modules(src/modules) */
+{
+  console.group('\n\x1b[46m\x1b[30m Modules(src/modules): \x1b[0m');
+  try {
+    console.log('Для проверки задания набрать: npm run modules.test');
+  } catch (error) {
+    console.log(error);
+  }
+  console.groupEnd();
 }
 
 /* Command line interface(src/cli) */
