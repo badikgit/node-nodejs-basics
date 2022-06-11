@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "all:test": "node test",
-    "modules:test": "node src/modules/test"
+    "modules.test": "node src/modules/test"
   },
   "repository": {
     "type": "git",
